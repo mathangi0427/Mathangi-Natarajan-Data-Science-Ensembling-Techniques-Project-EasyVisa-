@@ -22,36 +22,61 @@ Recommend a suitable profile for the applicants for whom the visa should be cert
 The data contains the different attributes of the employee and the employer. The detailed data dictionary is given below.
 
 case_id: ID of each visa application
+
 continent: Information of continent the employee
+
 education_of_employee: Information of education of the employee
+
 has_job_experience: Does the employee has any job experience? Y= Yes; N = No
+
 requires_job_training: Does the employee require any job training? Y = Yes; N = No
+
 no_of_employees: Number of employees in the employer's company
+
 yr_of_estab: Year in which the employer's company was established
+
 region_of_employment: Information of foreign worker's intended region of employment in the US.
+
 prevailing_wage: Average wage paid to similarly employed workers in a specific occupation in the area of intended employment. The purpose of the prevailing wage is to ensure that the foreign worker is not underpaid compared to other workers offering the same or similar service in the same area of employment.
+
 unit_of_wage: Unit of prevailing wage. Values include Hourly, Weekly, Monthly, and Yearly.
+
 full_time_position: Is the position of work full-time? Y = Full Time Position; N = Part Time Position
+
 case_status: Flag indicating if the Visa was certified or denied
 
 **EDA Summary of Observations**
 
 There are some employers having huge employee base of more than 100000 employees spanning upto 602069 employees.
+
 The Asian continent has highest number of 66% of applicants for US visa followed by Europe and North America.
+
 40% of the candidates applying for USA work visa have completed Bachelor's degree. 37.8% of the candidates apllying for USA work visa have completed Master's degree.
+
 58% of the candidates applying for USA work visa have prior job experience while 42% of the candidates doesn't have job experience.
+
 The education of the employee has lot of value in determining the certification of the visa application.
+
 Applicants with prior job experience has a probability of 70% of visa getting certified compared to applicants without job experience making only a 50% chance of visa getting certified.
+
 The applicants from Europe has highest of 80% of Visa certification whereas the applicants from South America has the lowest probability of 58% of visa getting certified among all the other continents.
+
 There are more than 2900 applicants who completed Bachelor's have selected their intended region of employment as either south or West.
+
 Candidates applying to work for the employers who pay an yearly salary have less probability of their visa getting denied meaning the probability of the visa getting certified is 70% which is higher than other unit of wage.
+
 Employers who pay Hourly salary have the visa certified rate to be very low close to 35% compared to all the other unit of wages such as Month, Yer and Week.
+
 The median value of prevailing wage for cases of both certified and denied is close to 70000 dollars. However the median prevailing wage of cases certified is slightly higher than cases which are denied. Less than 25% of cases which are certified have prevailing wage of atleast 30000 dollars
 
 **Actionable Insights and Recommendations**
 
 The hyperparameter tuned XGBoost classifier model can be implemented to facilitate OFLC in determining the decision for visa certification process.
+
 The features such as education of employees, previous job experience and the demography the employee applies from and the unit of wage plays a key role in determining whether the visa application should be certified or denied.
+
 Candidates applying to work for the employers who pay an yearly salary have less probability of their visa getting denied meaning the probability of the visa getting certified is 70% which is higher than other unit of wage.Hence the OFLC can consider the unit of wage as a key factor for visa applications.
+
 The job experience factor can be taken as a first level of scrutiny in determining the visa certification by OFLC as the applicants with prior job experience has 70% probability of getting their visa certified.
+
 The OFLC can consider the employees who have completed a minimum education of Bachelor's for further scrutiny of visa certification.
